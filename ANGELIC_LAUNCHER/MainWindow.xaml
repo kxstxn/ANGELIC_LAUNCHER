@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ANGELIC_LAUNCHER"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
-        Title="Angelic Launcher" Height="468" Width="675"
+        Title="Angelic Launcher" Height="438" Width="675" ResizeMode="NoResize" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Foreground="White">
 
     <Window.Background>
@@ -14,7 +14,7 @@
     </Window.Background>
 
     <Grid Margin="0,0,0,-6">
-        <Frame Content="Frame" Background="Black" NavigationUIVisibility="Automatic" Margin="0,271,0,0" Opacity="0.5"/>
+        <Frame Content="Frame" Background="Black" NavigationUIVisibility="Automatic" Margin="0,271,0,0" Opacity="0.5" Height="173" VerticalAlignment="Top"/>
         <ui:Button x:Name="StartButton" Appearance="Primary" Content="Play" Margin="491,370,0,0" VerticalAlignment="Top" Width="154" Click="StartButton_Click" Height="40" Background="HotPink" FontFamily="Arial Black" Cursor="Hand" FontSize="20" Foreground="White" PressedForeground="Black">
             <ui:Button.Effect>
                 <DropShadowEffect Color="HotPink" ShadowDepth="2" BlurRadius="1"/>
@@ -22,14 +22,25 @@
         </ui:Button>
         <ComboBox x:Name="VersionsCombobox" HorizontalAlignment="Left" Margin="172,330,0,0" VerticalAlignment="Top" Width="138" Height="30" FontSize="10"/>
         <Label Content="Select Version" HorizontalAlignment="Left" Margin="172,307,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="3.815,0.51"/>
-        <ProgressBar x:Name="DownloadProgressBar" HorizontalAlignment="Left" Height="40" Margin="21,370,0,0" VerticalAlignment="Top" Width="456"/>
+        <ProgressBar x:Name="DownloadProgressBar" HorizontalAlignment="Left" Height="40" Margin="21,370,0,0" VerticalAlignment="Top" Width="456" Foreground="HotPink"/>
         <ui:TextBox x:Name="NicknameTextBox" PlaceholderText="Enter Nickname" HorizontalAlignment="Left" Margin="21,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="139" Height="30" FontSize="10"/>
         <Label Content="Nickname" HorizontalAlignment="Left" Margin="21,307,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="3.815,0.51"/>
         <Label x:Name="PercentLabel" Content="    " HorizontalAlignment="Left" Margin="34,380,0,0" VerticalAlignment="Top"/>
         <ui:TextBox x:Name="DefaultServerTextBox" HorizontalAlignment="Left" Margin="323,330,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Height="30" PlaceholderText="Enter default server" FontSize="10"/>
         <Label Content="Default Server" HorizontalAlignment="Left" Margin="323,307,0,0" VerticalAlignment="Top" Width="121" RenderTransformOrigin="3.815,0.51"/>
-
-
+        <Button x:Name="CloseButton" Margin="625,10,0,0" VerticalAlignment="Top" Background="White" RenderTransformOrigin="0.5,0.5" Click="CloseButton_Click" Opacity="0.8" Cursor="Hand">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.461"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Content>
+                <Image Source="/icons/close.png" Height="17" Width="10"></Image>
+            </Button.Content>
+        </Button>
 
     </Grid>
 </Window>
